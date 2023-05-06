@@ -2,40 +2,31 @@
 
 import { useState } from "react";
 import { NewItemForm } from "./NewItemForm";
+import { AddItemButton } from "./AddItemButton";
 
 interface AddNewItemProps {
     dark?: boolean;
-    onAdd(text: string): void;
     toggleButtonText: string;
 }
 
-export const AddNewItem = ({
-    dark,
-    onAdd,
-    toggleButtonText,
-}: AddNewItemProps) => {
+export const AddNewItem = ({ dark, toggleButtonText }: AddNewItemProps) => {
     const [showForm, setShowForm] = useState(false);
+    const [text, setText] = useState("");
+    const [textList, setTextList] = useState([]);
 
     if (showForm) {
         return (
             <NewItemForm
-                onAdd={(text) => {
-                    onAdd(text);
-                    setShowForm(false);
-                }}
+                setText={setText}
+                text={text}
+                setShowForm={setShowForm}
             />
         );
     }
 
     return (
-        <div
-            // dark={dark}
-            onClick={() => setShowForm(true)}
-            className={`bg-[#ffffff3d] rounded-[3px] border-none cursor-pointer max-w-[300px] py-[10px] px-3 text-left w-full hover:bg-[#ffffff52] ${
-                dark ? "text-white" : "text-black"
-            }`}
-        >
+        <AddItemButton dark={dark} setShowForm={setShowForm}>
             {toggleButtonText}
-        </div>
+        </AddItemButton>
     );
 };

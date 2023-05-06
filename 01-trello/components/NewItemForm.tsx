@@ -1,14 +1,10 @@
-"use client";
-
-import { useState } from "react";
-
 interface NewItemFormProps {
-    onAdd(text: string): void;
+    text: string;
+    setText(text: string): void;
+    setShowForm(bool: boolean): void;
 }
 
-export const NewItemForm = ({ onAdd }: NewItemFormProps) => {
-    const [text, setText] = useState("");
-
+export const NewItemForm = ({ setText, text }: NewItemFormProps) => {
     return (
         <form className="max-w-[300px] flex flex-col w-full items-start">
             <input
@@ -18,7 +14,7 @@ export const NewItemForm = ({ onAdd }: NewItemFormProps) => {
             ></input>
             <button
                 className="bg-[#5aac44] rounder-[3px] border-none shadow-none text-white px-3 py-[6px] text-center"
-                onClick={() => onAdd(text)}
+                onClick={() => console.log}
             >
                 Create
             </button>
