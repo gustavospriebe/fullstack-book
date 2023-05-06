@@ -1,10 +1,9 @@
-import React from "react";
-
-type AddItemButtonProps = {
+"use server";
+interface AddItemButtonProps {
     children: React.ReactNode;
     dark?: boolean;
     setShowForm(bool: boolean): void;
-};
+}
 
 export const AddItemButton = ({
     dark,

@@ -4,7 +4,11 @@ interface NewItemFormProps {
     setShowForm(bool: boolean): void;
 }
 
-export const NewItemForm = ({ setText, text }: NewItemFormProps) => {
+export const NewItemForm = ({
+    setText,
+    text,
+    setShowForm,
+}: NewItemFormProps) => {
     return (
         <form className="max-w-[300px] flex flex-col w-full items-start">
             <input
@@ -14,7 +18,9 @@ export const NewItemForm = ({ setText, text }: NewItemFormProps) => {
             ></input>
             <button
                 className="bg-[#5aac44] rounder-[3px] border-none shadow-none text-white px-3 py-[6px] text-center"
-                onClick={() => console.log}
+                onClick={() => {
+                    setShowForm(false);
+                }}
             >
                 Create
             </button>

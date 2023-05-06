@@ -1,10 +1,11 @@
-import Card from "@/components/Card";
-import { Column } from "@/components/Column";
+import { AddNewItem } from "./components/AddNewItem";
+import Card from "./components/Card";
+import { Column } from "./components/Column";
 
-export default function Home() {
+function App() {
     return (
         <div className="flex flex-row items-start bg-[#3179ba] w-full min-h-screen p-5">
-            <Column text="Planned">
+            <Column text="To Do">
                 <Card text="Generate app scaffold" />
             </Column>
             <Column text="In Progress">
@@ -13,6 +14,9 @@ export default function Home() {
             <Column text="Done">
                 <Card text="Begin to use static typing" />
             </Column>
+            <AddNewItem toggleButtonText="+ Add another list" />
         </div>
     );
 }
+
+export default App;
