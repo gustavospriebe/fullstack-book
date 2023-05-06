@@ -14,7 +14,7 @@ export const AddItemButton = ({
         <div
             onClick={() => setShowForm(true)}
             className={`bg-[#ffffff3d] rounded-[3px] border-none cursor-pointer max-w-[300px] py-[10px] px-3 text-left w-full hover:bg-[#ffffff52] ${
-                dark ? "text-white" : "text-black"
+                dark ? "text-black" : "text-white"
             }`}
         >
             {children}

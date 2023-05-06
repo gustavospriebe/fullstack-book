@@ -14,7 +14,10 @@ function App() {
             <Column text="Done">
                 <Card text="Begin to use static typing" />
             </Column>
-            <AddNewItem toggleButtonText="+ Add another list" />
+            <AddNewItem
+                toggleButtonText="+ Add another list"
+                onAdd={console.log}
+            />
         </div>
     );
 }

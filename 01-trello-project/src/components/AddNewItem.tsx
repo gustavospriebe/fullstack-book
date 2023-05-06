@@ -7,19 +7,23 @@ import { AddItemButton } from "./AddItemButton";
 interface AddNewItemProps {
     dark?: boolean;
     toggleButtonText: string;
+    onAdd(text: string): void;
 }
 
-export const AddNewItem = ({ dark, toggleButtonText }: AddNewItemProps) => {
+export const AddNewItem = ({
+    onAdd,
+    dark,
+    toggleButtonText,
+}: AddNewItemProps) => {
     const [showForm, setShowForm] = useState(false);
-    const [text, setText] = useState("");
-    const [textList, setTextList] = useState([]);
 
     if (showForm) {
         return (
             <NewItemForm
-                setText={setText}
-                text={text}
-                setShowForm={setShowForm}
+                onAdd={(text) => {
+                    onAdd(text);
+                    setShowForm(false);
+                }}
             />
         );
     }
