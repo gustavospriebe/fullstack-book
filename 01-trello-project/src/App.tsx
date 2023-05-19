@@ -4,7 +4,7 @@ import { Column } from "./components/Column";
 
 function App() {
     return (
-        <div className="flex flex-row items-start bg-[#3179ba] w-full min-h-screen p-5">
+        <div className="flex min-h-screen w-full flex-row items-start bg-[#3179ba] p-5">
             <Column text="To Do">
                 <Card text="Generate app scaffold" />
             </Column>
@@ -23,3 +23,26 @@ function App() {
 }
 
 export default App;
+
+interface State {
+    count: number;
+}
+
+interface Action {
+    type: "increment" | "decrement";
+}
+
+const counterReducer = (state: State, action: Action) => {
+    switch (action.type) {
+        case "increment":
+            return {
+                count: state.count + 1,
+            };
+        case "decrement":
+            return {
+                count: state.count - 1,
+            };
+        default:
+            throw new Error();
+    }
+};

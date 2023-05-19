@@ -8,8 +8,8 @@ interface ColumnProps {
 
 export const Column: FC<ColumnProps> = ({ text, children }) => {
     return (
-        <div className="bg-[#ebecf0] grow-0 p-2 rounded mr-5 w-[300px] min-h-[40px]">
-            <div className="font-bold pt-[6px] pb-3 px-4 ">{text}</div>
+        <div className="mr-5 min-h-[40px] w-[300px] grow-0 rounded bg-[#ebecf0] p-2">
+            <div className="px-4 pb-3 pt-[6px] font-bold ">{text}</div>
             {children}
             <AddNewItem
                 toggleButtonText="+ Add another List"
